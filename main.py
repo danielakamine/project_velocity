@@ -8,6 +8,9 @@ import os
 # Crear carpeta destino (en la misma ubicación del script o ejecutable)
 os.makedirs(PATH, exist_ok=True)
 
+print("DEBUG: EMAIL_USER set?", "EMAIL_USER" in os.environ)
+print("DEBUG: EMAIL_PASS set?", "EMAIL_PASS" in os.environ)
+
 for beacon_id, name in BEACONS.items():
     print(f"Procesando beacon {name} ({beacon_id})")
 
