@@ -23,6 +23,12 @@ def send_report_email(subject, body, recipients, attachment_path=None):
     if not sender_email or not password:
         raise ValueError("⚠️ Faltan las variables de entorno EMAIL_USER o EMAIL_PASS")
 
+    msg = MIMEMultipart()
+    msg["From"] = f"{alias} <{sender_email}>"
+    msg["To"] = ", ".join(recipients)
+    msg["Subject"] = subject
+    msg.attach(MIMEText(body, "plain"))
+
     # Adjuntar PDF
     if attachment_path and Path(attachment_path).exists():
         with open(attachment_path, "rb") as f:
