@@ -59,7 +59,8 @@ def add_cover_page(c, title, num_images, logo_path=None,
         return f"{dt.day:02d} {mes} {dt.year}"
 
     # 🔹 Fecha de generación (legible)
-    fecha_generacion = formato_humano(datetime.now().strftime("%Y-%m-%d %H:%M"), incluir_hora=True)
+    #fecha_generacion = formato_humano(datetime.now().strftime("%Y-%m-%d %H:%M"), incluir_hora=True)
+    fecha_generacion = formato_humano(start_time_str, incluir_hora=True)
     c.setFont("Helvetica", 14)
     c.setFillColor(colors.black)
     c.drawCentredString(width / 2, height - 230, f"Generado el {fecha_generacion}")
