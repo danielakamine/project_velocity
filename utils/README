@@ -1,0 +1,15 @@
+project_velocity/
+│
+├── main.py
+├── config.py
+├── utils/
+│   ├── data_fetcher.py
+│   ├── plotter.py
+│   ├── pdf_exporter.py
+│   ├── email_sender.py
+│   └── __init__.py
+│
+├── requirements.txt
+└── .github/
+    └── workflows/
+        └── run_report.yml
