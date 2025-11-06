@@ -26,5 +26,7 @@ jobs:
         env:
           EMAIL_USER: ${{ secrets.EMAIL_USER }}
           EMAIL_PASS: ${{ secrets.EMAIL_PASS }}
+          BZID: ${{ secrets.BZID }}
+
         run: |
           python main.py

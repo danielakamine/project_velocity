@@ -2,12 +2,15 @@ import json
 import subprocess
 from pathlib import Path
 import config
+import os
+
+BZID = os.getenv("BZID")
 
 def run_curl_command(beacon_id, metric, output_file):
     cmd = [
         "curl", "--location", "--request", "GET",
         f"https://bluzone.io/portal/papis/v1/history/metric/88204?beaconId={beacon_id}&metric={metric}&interval=1m&endDate={config.END_TIME_STR}&startDate={config.START_TIME_STR}&includeZeros=false&format=json&merge=false",
-        "--header", "BZID: EHn6sJM3eGGnBKFtP4cW93Y9ch1vuW9ZdgvZOvjATRSLlKzmu0",
+        "--header", "BZID: (BZID)",
         "-o", str(output_file)
     ]
     subprocess.run(cmd, check=True, shell=False)
